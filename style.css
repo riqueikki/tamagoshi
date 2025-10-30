@@ -12,15 +12,16 @@
 .pixel {
   width: 1px;
   height: 1px;
-  background-color: #ffcc00; /* cor base do corpo */
+  background-color: #ffcc00; /* Cor base do corpo */
   box-shadow:
-    /* Cabeça */
-    1px 0 #ffcc00, 2px 0 #ffcc00, 3px 0 #ffcc00,
-    0 1 #ffcc00, 1 1 #000, 2 1 #000, 3 1 #ffcc00,
-    0 2 #ffcc00, 1 2 #ffcc00, 2 2 #ffcc00, 3 2 #ffcc00,
-    /* Corpo */
-    1px 3 #ffcc00, 2px 3 #ffcc00,
-    1px 4 #ffcc00, 2px 4 #ffcc00,
-    /* Olhos */
-    1px 1 #000, 2px 1 #000;
+    /* Cabeça - Linha 0 */
+    1px 0px 0px #ffcc00, 2px 0px 0px #ffcc00, 3px 0px 0px #ffcc00,
+    /* Cabeça & Olhos - Linha 1 */
+    0px 1px 0px #ffcc00, 1px 1px 0px #000, 2px 1px 0px #000, 3px 1px 0px #ffcc00,
+    /* Cabeça - Linha 2 */
+    0px 2px 0px #ffcc00, 1px 2px 0px #ffcc00, 2px 2px 0px #ffcc00, 3px 2px 0px #ffcc00,
+    /* Corpo - Linha 3 */
+    1px 3px 0px #ffcc00, 2px 3px 0px #ffcc00,
+    /* Corpo - Linha 4 */
+    1px 4px 0px #ffcc00, 2px 4px 0px #ffcc00;
 }
