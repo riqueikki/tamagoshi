@@ -2,19 +2,25 @@
   position: fixed;
   bottom: 30px;
   left: 50%;
-  transform: translateX(-50%) scale(8); /* aumenta tamanho mantendo pixel */
-  width: 5px;
-  height: 5px;
+  transform: translateX(-50%) scale(8);
+  width: 1px;
+  height: 1px;
   image-rendering: pixelated;
+  background-color: transparent;
 }
 
 .pixel {
   width: 1px;
   height: 1px;
-  background-color: #ffcc00; /* cor do corpo */
+  background-color: #ffcc00; /* cor base do corpo */
   box-shadow:
     /* Cabeça */
-    0 0 #ffcc00, 1px 0 #ffcc00, 2px 0 #ffcc00,
-    0 1 #ffcc00, 1px 1 #000,      2px 1 #ffcc00,
-    0 2 #ffcc00, 1px 2 #ffcc00, 2px 2 #ffcc00;
+    1px 0 #ffcc00, 2px 0 #ffcc00, 3px 0 #ffcc00,
+    0 1 #ffcc00, 1 1 #000, 2 1 #000, 3 1 #ffcc00,
+    0 2 #ffcc00, 1 2 #ffcc00, 2 2 #ffcc00, 3 2 #ffcc00,
+    /* Corpo */
+    1px 3 #ffcc00, 2px 3 #ffcc00,
+    1px 4 #ffcc00, 2px 4 #ffcc00,
+    /* Olhos */
+    1px 1 #000, 2px 1 #000;
 }
