@@ -17,6 +17,25 @@ button:hover {
   background-color: #005f73;
 }
 
+body {
+  background-color: #f4f4f4;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+button {
+  background-color: #008CBA;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005f73;
+}
+
 #bichinho {
   position: fixed;
   bottom: 30px;
@@ -52,4 +71,3 @@ button:hover {
     4px 4px #000,
     6px 4px #000;
 }
-
