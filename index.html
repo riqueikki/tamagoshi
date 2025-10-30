@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Tamagotchi</title>
+  <style>
+    body { font-family: Arial; text-align: center; background: #f4f4f4; }
+    #stats { margin: 20px; }
+    button { margin: 5px; padding: 10px 20px; }
+  </style>
+</head>
+<body>
+  <h1>🐣 Meu Tamagotchi</h1>
+  <div id="stats">
+    Fome: <span id="fome">100</span><br>
+    Sono: <span id="sono">100</span><br>
+    Higiene: <span id="higiene">100</span><br>
+  </div>
+
+  <button onclick="comer()">🍖 Comer</button>
+  <button onclick="dormir()">😴 Dormir</button>
+  <button onclick="defecar()">💩 Defecar</button>
+  <button onclick="novoJogo()">🔄 Novo Jogo</button>
+
+  <h2 id="status"></h2>
+
+  <script>
+    let fome = 100, sono = 100, higiene = 100;
+    let vivo = true;
+
+    function atualizar() {
+      document.getElementById("fome").textContent = fome;
+      document.getElementById("sono").textContent = sono;
+      document.getElementById("higiene").textContent = higiene;
+
+      if (fome <= 0 || sono <= 0 || higiene <= 0) {
+        document.getElementById("status").textContent = "💀 Seu Tamagotchi morreu!";
+        vivo = false;
+      }
+    }
+
+    function comer() {
+      if (!vivo) return;
+      fome = Math.min(100, fome + 20);
+      sono -= 5;
+      higiene -= 10;
+      atualizar();
+    }
+
+    function dormir() {
+      if (!vivo) return;
+      sono = Math.min(100, sono + 20);
+      fome -= 10;
+      atualizar();
+    }
+
+    function defecar() {
+      if (!vivo) return;
+      higiene = Math.min(100, higiene + 20);
+      fome -= 5;
+      sono -= 5;
+      atualizar();
+    }
+
+    function novoJogo() {
+      fome = sono = higiene = 100;
+      vivo = true;
+      document.getElementById("status").textContent = "Novo jogo iniciado!";
+      atualizar();
+    }
+
+    // Reduz os status automaticamente com o tempo
+    setInterval(() => {
+      if (vivo) {
+        fome -= 2;
+        sono -= 1;
+        higiene -= 1;
+        atualizar();
+      }
+    }, 2000);
+
+    atualizar();
+  </script>
+</body>
+</html>
