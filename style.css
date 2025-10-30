@@ -16,3 +16,40 @@ button {
 button:hover {
   background-color: #005f73;
 }
+
+#bichinho {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16px;
+  height: 16px;
+  scale: 8; /* aumenta o tamanho do pixel art */
+  image-rendering: pixelated;
+}
+
+.pixel {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow:
+    /* cabeça */
+    4px 2px #444,
+    5px 2px #444,
+    6px 2px #444,
+    3px 3px #444,
+    7px 3px #444,
+    2px 4px #444,
+    8px 4px #444,
+    2px 5px #444,
+    8px 5px #444,
+    3px 6px #444,
+    7px 6px #444,
+    4px 7px #444,
+    5px 7px #444,
+    6px 7px #444,
+    /* olhos */
+    4px 4px #000,
+    6px 4px #000;
+}
+
