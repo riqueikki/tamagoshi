@@ -3,22 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <title>Tamagotchi</title>
-  <link rel="stylesheet" href="style.css">
+
   <style>
-    body { font-family: Arial; text-align: center; background: #f4f4f4; }
-    #stats { margin: 20px; }
-    button { margin: 5px; padding: 10px 20px; }
+    body { 
+      font-family: Arial, sans-serif; 
+      text-align: center; 
+      background: #f4f4f4; 
+    }
+    #stats { 
+      margin: 20px; 
+      font-size: 1.2em;
+      line-height: 1.5;
+    }
+    button { 
+      margin: 5px; 
+      padding: 10px 20px;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    
+    /* --- CSS DO TAMAGOTCHI CORRIGIDO --- */
+    #bichinho {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      /* Aumenta a escala em 8x para que o 1px se torne 8px */
+      transform: translateX(-50%) scale(8); 
+      width: 1px;
+      height: 1px;
+      /* Propriedade para manter o desenho nítido */
+      image-rendering: pixelated; 
+      background-color: transparent;
+    }
+
+    .pixel {
+      width: 1px;
+      height: 1px;
+      background-color: #ffcc00; /* Cor base do corpo */
+      
+      /* O DESENHO EM PIXEL ART ATRAVÉS DE MÚLTIPLAS SOMBRAS */
+      box-shadow:
+        /* Linha 0 (Topo da cabeça) */
+        1px 0 0 #ffcc00, 2px 0 0 #ffcc00, 3px 0 0 #ffcc00,
+        
+        /* Linha 1 (Olhos e laterais) */
+        0 1px 0 #ffcc00, 
+        1px 1px 0 #000, /* Olho Esquerdo */
+        2px 1px 0 #000, /* Olho Direito */
+        3px 1px 0 #ffcc00,
+        
+        /* Linha 2 (Meio da cabeça) */
+        0 2px 0 #ffcc00, 1px 2px 0 #ffcc00, 2px 2px 0 #ffcc00, 3px 2px 0 #ffcc00,
+        
+        /* Linha 3 (Pescoço/Corpo Superior) */
+        1px 3px 0 #ffcc00, 2px 3px 0 #ffcc00,
+        
+        /* Linha 4 (Corpo Inferior) */
+        1px 4px 0 #ffcc00, 2px 4px 0 #ffcc00;
+    }
+    
   </style>
 </head>
 <body>
-  <h1>🐣 Meu Tamagotchi</h1>
+  
+  <h1>
+    <span style="font-size: 1.5em; vertical-align: middle;">🐣</span> 
+    Meu Tamagotchi
+  </h1>
+  
   <div id="stats">
     Fome: <span id="fome">100</span><br>
     Sono: <span id="sono">100</span><br>
     Higiene: <span id="higiene">100</span><br>
   </div>
-  
-
+    
   <button onclick="comer()">🍖 Comer</button>
   <button onclick="dormir()">😴 Dormir</button>
   <button onclick="defecar()">💩 Defecar</button>
@@ -27,13 +87,11 @@
   <h2 id="status"></h2>
 
   <div id="bichinho">
-  <div class="pixel"></div>
-</div>
-
-
-
+    <div class="pixel"></div>
+  </div>
 
   <script>
+    // SEU CÓDIGO JAVASCRIPT: CORRETO
     let fome = 100, sono = 100, higiene = 100;
     let vivo = true;
 
